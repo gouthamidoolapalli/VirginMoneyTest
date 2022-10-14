@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <!-- add variables & imports into here -->
+        <variable
+            name="room"
+            type="com.example.virginmoneytest.model.Room" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50"
+        android:layout_margin="@dimen/dimen_10">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@{`Room `+room.id}"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewoccupancy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@{`Max Occupancy: `+String.valueOf(room.maxOccupancy)}"
+            android:textStyle="normal"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchOccupancy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="@{room.isOccupied()}"
+            android:clickable="false"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

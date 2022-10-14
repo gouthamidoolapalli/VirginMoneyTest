@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.virginmoneytest.viewmodel.MainViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/contacts"
+                android:layout_width="@dimen/dimen_50"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_margin="@dimen/dimen_5"
+                android:layout_marginRight="@dimen/dimen_24"
+                android:src="@drawable/ic_calendar" />
+
+            <TextView
+                android:id="@+id/contactsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/contacts"
+                android:gravity="center"
+                android:layout_alignLeft="@+id/contacts"
+                android:layout_alignRight="@+id/contacts"
+                android:text="@string/title_activity_contacts"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/text_12" />
+
+            <ImageView
+                android:id="@+id/rooms"
+                android:layout_width="@dimen/dimen_50"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_margin="@dimen/dimen_5"
+                android:layout_marginStart="@dimen/dimen_10"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:layout_marginEnd="@dimen/dimen_10"
+                android:layout_marginBottom="@dimen/dimen_10"
+                android:layout_toRightOf="@+id/contacts"
+                android:src="@drawable/ic_baseline_room" />
+
+            <TextView
+                android:id="@+id/roomsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rooms"
+                android:gravity="center"
+                android:layout_alignLeft="@+id/rooms"
+                android:layout_alignRight="@+id/rooms"
+                android:layout_toRightOf="@+id/contactsText"
+                android:text="@string/title_activity_rooms"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/text_12" />
+        </RelativeLayout>
+
+
+    </FrameLayout>
+</layout>

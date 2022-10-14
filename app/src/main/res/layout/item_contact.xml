@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <!-- add variables & imports into here -->
+        <variable
+            name="contact"
+            type="com.example.virginmoneytest.model.Contact" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dimen_70"
+    android:padding="@dimen/dimen_10">
+
+    <ImageView
+        android:id="@+id/contactImage"
+        android:layout_width="@dimen/dimen_50"
+        android:layout_height="@dimen/dimen_50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+    <TextView
+        android:id="@+id/contactName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text='@{contact.firstName+" "+contact.lastName}'
+        android:layout_marginLeft="@dimen/dimen_10"
+        app:layout_constraintLeft_toRightOf="@+id/contactImage"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="@dimen/text_14"/>
+    <TextView
+        android:id="@+id/jobTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_5"
+        android:layout_marginLeft="@dimen/dimen_10"
+        android:text="@{contact.jobtitle}"
+        app:layout_constraintLeft_toRightOf="@+id/contactImage"
+        app:layout_constraintTop_toBottomOf="@+id/contactName"
+        android:textSize="@dimen/text_14"/>
+    <ImageView
+        android:id="@+id/email"
+        android:layout_width="@dimen/dimen_24"
+        android:layout_height="@dimen/dimen_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_email"
+        android:onClick="openEmailIntent(contact, view)"
+        android:layout_margin="@dimen/dimen_10"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
